@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <title>Авторизация</title>
+</head>
+<body>
+<h1 class="title" style="margin-left: 6px">Авторизация</h1>
+<h2 class="subtitle is-4" style="margin-left: 6px">Введите свой логин и пароль для входа в систему</h2>
+<form class="box" style="width: 33%;" action="" method="post">
+  <div class="field">
+    <label class="label">Логин</label>
+    <div class="control">
+      <input class="input" type="text" name="login" placeholder="Библиотекарь123">
+    </div>
+  </div>
+
+  <div class="field">
+    <label class="label">Пароль</label>
+    <div class="control">
+      <input class="input" type="password" name="password" placeholder="********">
+    </div>
+  </div>
+  <button class="button is-primary" type="submit">Отправить</button>
+    <a href="{{url_for('navbar')}}" class="button is-primary">Назад</a></button>
+</form>
+{% if error %}
+<div class="notification is-danger" style="width: 33%;">
+    <button class="delete"></button>
+    {{error}}
+</div>
+{% endif %}
+</body>
+</html>

@@ -1,0 +1,16 @@
+{
+  "Admin": [
+    "",
+    "auth",
+    "search.main",
+    "search.search_id"
+  ],
+  "Director": [
+        "",
+    "auth",
+    "search.search_date"
+  ],
+  "unauthorized": [
+    "auth"
+  ]
+}

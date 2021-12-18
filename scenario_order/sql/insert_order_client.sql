@@ -1,0 +1,1 @@
+insert order_client(order_date, client_id) values('$current_time', '$id_client')

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+{% import 'client_utils.html' as utils %}
+<h1 class="title" style="margin-left: 6px">Выбор читателя для составления заказа</h1>
+<aside class="menu" style="margin-left: 6px">
+  <div class="content">
+    <p>Выберите читателя для дальнейшего составления заказа</p>
+      <p> Вернуться в <a href="{{url_for('navbar')}}">Главное меню</a></p>
+  </div>
+</aside>
+
+<div class="columns">
+  <div class="column is-6">
+      {% if clients %}
+      {% for client in clients %}
+      {{ utils.render_item(client, show_form = True) }}
+      {% endfor %}
+      {% else %}
+      <p>Нет доступных читателей</p>
+      {% endif %}
+  </div>
+</div>
+</body>
+</html>

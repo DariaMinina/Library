@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Library</title>
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+<h1 class="title" style="margin-left: 6px">Библиотека им. Н. А. Некрасова</h1>
+<h2 class="subtitle is-4" style="margin-left: 6px">Добро пожаловать!</h2>
+<aside class="menu" style="margin-left: 6px">
+  <div class="content">
+  <p>Для дальнейшей работы вам необходимо авторизоваться. После авторизации вы сможете работать только с теми пунктами меню, которые вам доступны.</p>
+  <p>Подробная инструкция по работе с данной информационной системой доступна по
+  <a class="has-text-link" href="https://www.google.com">ссылке</a>.</p>
+</div>
+  <p class="menu-label">
+    Главное меню
+  </p>
+  <ul class="menu-list">
+    <li><a href="{{url_for('auth.login_page')}}"> Авторизация </a></li>
+    <li><a href="{{url_for('search.main')}}">Работа с оперативной информацией</a></li>
+    <li><a href="{{url_for('basket.client_order')}}"> Создание нового заказа </a></li>
+    <li><a href="{{url_for('exit')}}">Выход из системы</a></li>
+  </ul>
+</aside>
+</body>
+</html>

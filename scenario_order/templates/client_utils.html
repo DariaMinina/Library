@@ -1,0 +1,21 @@
+{% macro render_item(client, show_form=False) %}
+<div class="box" style="border-style: solid; border-color: hsl(171, 100%, 41%); margin: 10px">
+    <div class="columns">
+        <div class="column is-9">
+            <p>
+            <span>ФИО читателя: {{client['name']}}</span>
+            <br>
+            <span>Почта: {{client['mail']}}</span>
+            </p>
+        </div>
+        {% if show_form %}
+        <div class="column is-2">
+            <form action="" method="post">
+                <input class="button is-primary" type="submit" value="Выбрать">
+                <input type="hidden" name="client_id" value="{{client['client_id']}}">
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}

@@ -1,0 +1,26 @@
+{% macro render_item(book, show_form=False) %}
+<div class="box" style="border-style: solid; border-color: hsl(171, 100%, 41%); margin: 10px">
+    <div class="columns">
+        <div class="column is-7">
+            <p>
+                <span>Название: {{book['Name']}}</span>
+                <br>
+                <span>Автор: {{book['Author']}}</span>
+                <br>
+                <span>Жанр: {{book['Genre']}}</span>
+                <br>
+            </p>
+        </div>
+        {% if show_form %}
+        <div class="column is-4">
+            <form action="" method="post">
+                <br>
+                <br>
+                <input class="button is-primary" type="submit" value="Добавить">
+                <input type="hidden" name="book_id" value="{{book['idbook']}}">
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endmacro %}

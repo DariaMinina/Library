@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Search</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    </head>
+<body>
+<h1 class="title" style="margin-left: 6px">Работа с оперативной информацией</h1>
+<aside class="menu" style="margin-left: 6px">
+  <div class="content">
+    <p>Введите год и месяц заключения договора для отображения всех сведений иб искомых издательствах</p>
+      <p> Вернуться в <a href="{{url_for('navbar')}}">Главное меню</a></p>
+    </div>
+    </aside>
+    <form class="box" name="example" style="width: 33%;" method="post" action="">
+        <div class="field">
+            <label class="label">Год заключения договора</label>
+            <div class="control">
+            <input class="input" type="text" name="year" placeholder="Введите год">
+            </div>
+        </div>
+        <div class="field">
+            <label class="label">Месяц заключения договора</label>
+            <div class="control">
+            <input class="input" type="text" name="month" placeholder="Введите месяц">
+            </div>
+        </div>
+        <button class="button is-primary" type="submit">Поиск</button>
+        <a href="{{url_for('search.main')}}" class="button is-primary">Назад</a></button>
+    </form>
+        <form style="width: 33%;" action="" method="POST" target="_self">
+            <input class="button is-right" type="submit" name="submit" value="Показать все издательства" />
+        </form>
+<br>
+{% if error %}
+<div class="notification is-danger" style="width: 33%;">
+    <button class="delete"></button>
+    {{error}}
+</div>
+{% endif %}
+</body>
+</html>

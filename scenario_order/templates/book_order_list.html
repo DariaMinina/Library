@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Order</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+
+{% import 'book_utils.html' as utils %}
+
+<div class="container">
+    <div class="columns">
+        <div class="column is-2">
+            <h2 class="title is-3">Вывести книги по жанрам</h2>
+            {% if genres %}
+            {% for genre in genres %}
+            <form style="width: 33%;">
+            <a href="{{url_for('basket.list_order_handler')}}?point={{genre}}" align="center" class="button is-right">{{genre}}</a>
+            </form>
+            <br>
+            {% endfor %}
+            {% else %}
+            <p>Нет данных</p>
+            {% endif %}
+            <form style="width: 33%;">
+            <a href="{{url_for('basket.list_order_handler')}}" align="center" class="button is-right">Все жанры</a>
+            </form>
+        </div>
+        <div class="column is-4">
+            <h2 class="title is-3" align="center">Список книг</h2>
+            {% if books %}
+            {% for book in books %}
+            {{ utils.render_item(book, show_form = True) }}
+            {% endfor %}
+            {% else %}
+            <p>Нет доступных книг</p>
+            {% endif %}
+        </div>
+        <div class="column is-4">
+            <h2 class="title is-3" align="center">Заказ</h2>
+            {% if basket %}
+            {% for book in basket %}
+            {{ utils.render_item(book, show_form = False)}}
+            {% endfor %}
+            {% else %}
+            <p>Заказ пуст</p>
+            {% endif %}
+        </div>
+        <div class="column is-2">
+            <div class="box" align="center">
+                <div class="content">
+                <p align="center">Читатель: {{client}}</p>
+                </div>
+                <a class="button is-primary" href="{{url_for('basket.buy_basket_handler')}}">Заказать</a>
+                <br>
+                <br>
+                <a class="button is-primary" href="{{url_for('basket.clear_basket_handler')}}">Отменить заказ</a>
+                <br>
+                <br>
+                <a class="button is-primary" href="{{url_for('navbar')}}">Главное меню</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

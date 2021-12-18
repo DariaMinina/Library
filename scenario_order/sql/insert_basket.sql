@@ -1,0 +1,1 @@
+insert basket(item_id, amount) values('$item_id', '$amount')

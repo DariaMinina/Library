@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+</head>
+<body>
+<h1 class="title">Работа с оперативной информацией</h1>
+<aside class="menu" style="margin-left: 6px">
+  <div class="content">
+    <p>Минимальная цена за книгу с названием {{name}}.</p>
+      <p> Вернуться в <a href="{{url_for('navbar')}}">Главное меню</a></p>
+</div>
+</aside>
+<div class="table-container">
+      <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+            <!-- table header -->
+            {% if data %}
+            <tr>
+            {% for key in heads %}
+            <th> {{ key }} </th>
+            {% endfor %}
+            </tr>
+            {% endif %}
+
+            <!-- table rows -->
+            {% for dict_item in data %}
+            <tr>
+            {% for value in dict_item.values() %}
+            <td> {{ value }} </td>
+            {% endfor %}
+            </tr>
+            {% endfor %}
+            </table>
+</div>
+    <a style="margin-left: 6px" href="{{url_for('search.search_min')}}" class="button is-primary">Назад</a>
+</body>
+</html>

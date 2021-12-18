@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+        <title>Library</title>
+    </head>
+<body>
+<h1 class="title" style="margin-left: 6px">Работа с оперативной информацией</h1>
+<aside class="menu" style="margin-left: 6px">
+  <div class="content">
+    <p>Основная информация о библиотеке им. Н. А. Некрасова</p>
+      <p> Вернуться в <a href="{{url_for('navbar')}}">Главное меню</a></p>
+</div>
+  <p class="menu-label">
+    Меню
+  </p>
+  <ul class="menu-list">
+    <li><a href="{{url_for('search.search_id')}}"> Сведения об издательствах, с которыми заключен договор </a></li>
+    <li><a href="{{url_for('search.search_date')}}">Издательства, с которыми расторгнут договор</a></li>
+    <li><a href="{{url_for('search.search_city')}}"> Количество издательств из определенного города</a></li>
+    <li><a href="{{url_for('search.search_gbook')}}">Все книги определенного жанра</a></li>
+      <li><a href="{{url_for('search.search_genre')}}">Количество книг определенного жанра</a></li>
+      <li><a href="{{url_for('search.search_min')}}">Минимальная цена экземпляра книги</a></li>
+  </ul>
+</aside>
+</body>
+</html>

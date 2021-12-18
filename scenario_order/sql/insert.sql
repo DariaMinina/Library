@@ -1,0 +1,1 @@
+insert items(name, price) values('$item_name', '$price')
